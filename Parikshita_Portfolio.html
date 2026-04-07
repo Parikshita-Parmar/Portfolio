@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parikshita Parmar — Digital Marketing Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root,[data-theme="light"]{
+  --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;
+  --color-surface-offset:#f0ede8;--color-divider:#dcd9d5;--color-border:#d4d1ca;
+  --color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;
+  --color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#cedcd8;
+  --color-accent-warm:#964219;
+  --shadow-sm:0 1px 2px oklch(0.2 0.01 80/0.06);
+  --shadow-md:0 4px 12px oklch(0.2 0.01 80/0.08);
+  --shadow-lg:0 12px 32px oklch(0.2 0.01 80/0.12);
+  --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
+  --font-display:'Instrument Serif',Georgia,serif;
+  --font-body:'DM Sans','Helvetica Neue',sans-serif;
+  --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+  --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+  --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --text-hero:clamp(2.5rem,1rem + 5vw,5rem);
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+  --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;
+  --space-16:4rem;--space-20:5rem;--space-24:6rem;
+  --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+  --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+}
+[data-theme="dark"]{
+  --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;
+  --color-surface-offset:#1d1c1a;--color-divider:#262523;--color-border:#393836;
+  --color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#5a5957;
+  --color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#313b3b;
+  --color-accent-warm:#bb653b;
+  --shadow-sm:0 1px 2px oklch(0 0 0/0.2);
+  --shadow-md:0 4px 12px oklch(0 0 0/0.3);
+  --shadow-lg:0 12px 32px oklch(0 0 0/0.4);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){
+  --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;
+  --color-surface-offset:#1d1c1a;--color-divider:#262523;--color-border:#393836;
+  --color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#5a5957;
+  --color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#313b3b;
+  --color-accent-warm:#bb653b;
+}}
+
+/* ─── BASE ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:4rem;}
+body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);}
+img,picture{display:block;max-width:100%;height:auto;}
+p,li{text-wrap:pretty;max-width:72ch;}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.15;}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
+a,button,[role="button"]{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),box-shadow var(--transition-interactive);}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+::selection{background:oklch(from var(--color-primary) l c h/0.2);color:var(--color-text);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+/* ─── NAV ─── */
+nav{position:sticky;top:0;z-index:100;background:oklch(from var(--color-bg) l c h/0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider);padding:var(--space-3) var(--space-6);}
+.nav-inner{max-width:var(--content-wide);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);}
+.nav-logo{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);text-decoration:none;letter-spacing:-0.02em;}
+.nav-links{display:flex;gap:var(--space-6);list-style:none;}
+.nav-links a{font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;font-weight:500;}
+.nav-links a:hover{color:var(--color-primary);}
+.theme-toggle{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);color:var(--color-text-muted);}
+.theme-toggle:hover{background:var(--color-surface-offset);color:var(--color-text);}
+@media(max-width:600px){.nav-links{display:none;}}
+
+/* ─── HERO ─── */
+.hero{min-height:85vh;display:flex;align-items:center;padding:clamp(var(--space-16),10vw,var(--space-24)) var(--space-6);}
+.hero-inner{max-width:var(--content-wide);margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-highlight);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-6);}
+.hero h1{font-family:var(--font-display);font-size:var(--text-hero);color:var(--color-text);line-height:1.05;letter-spacing:-0.03em;margin-bottom:var(--space-6);}
+.hero h1 em{font-style:italic;color:var(--color-primary);}
+.hero-desc{font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:var(--space-8);max-width:50ch;}
+.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);text-decoration:none;transition:all var(--transition-interactive);}
+.btn-primary{background:var(--color-primary);color:#fff;}
+.btn-primary:hover{background:var(--color-primary-hover);}
+.btn-ghost{border:1px solid var(--color-border);color:var(--color-text);}
+.btn-ghost:hover{background:var(--color-surface-offset);border-color:var(--color-text-muted);}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4);}
+.stat-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);box-shadow:var(--shadow-sm);}
+.stat-card .stat-num{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-primary);line-height:1;margin-bottom:var(--space-1);}
+.stat-card .stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500;}
+.stat-card.highlight{background:var(--color-primary);border-color:var(--color-primary);}
+.stat-card.highlight .stat-num{color:#fff;}
+.stat-card.highlight .stat-label{color:oklch(from #fff l c h/0.7);}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-stats{grid-template-columns:repeat(2,1fr);}}
+
+/* ─── SECTIONS ─── */
+.section{padding:clamp(var(--space-16),8vw,var(--space-24)) var(--space-6);}
+.section-alt{background:var(--color-surface);}
+.container{max-width:var(--content-default);margin-inline:auto;}
+.container-wide{max-width:var(--content-wide);margin-inline:auto;}
+.section-label{font-size:var(--text-xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-3);}
+.section-title{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);margin-bottom:var(--space-4);letter-spacing:-0.02em;}
+.section-desc{font-size:var(--text-base);color:var(--color-text-muted);max-width:55ch;margin-bottom:var(--space-12);}
+
+/* ─── ABOUT ─── */
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:var(--space-16);align-items:start;}
+.about-left{}
+.tools-list{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-6);}
+.tool-chip{font-size:var(--text-xs);font-weight:600;padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);background:var(--color-surface-offset);color:var(--color-text-muted);border:1px solid var(--color-border);}
+.about-bio p{font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:var(--space-4);line-height:1.7;}
+.about-bio strong{color:var(--color-text);}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
+
+/* ─── CASE STUDIES ─── */
+.cases-grid{display:grid;gap:var(--space-6);}
+.case-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive);}
+.case-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.case-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.case-content{padding:var(--space-10);}
+.case-meta{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-6);}
+.case-num{font-size:var(--text-xs);font-weight:700;color:var(--color-text-faint);letter-spacing:0.08em;}
+.case-tag{font-size:var(--text-xs);font-weight:600;background:var(--color-primary-highlight);color:var(--color-primary);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);}
+.case-content h3{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);margin-bottom:var(--space-4);letter-spacing:-0.02em;line-height:1.1;}
+.case-content p{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-6);line-height:1.7;}
+.case-steps{list-style:none;display:flex;flex-direction:column;gap:var(--space-3);}
+.case-steps li{display:flex;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted);}
+.case-steps li::before{content:attr(data-step);min-width:24px;height:24px;border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.case-result{background:var(--color-surface-offset);border-left:1px solid var(--color-divider);padding:var(--space-10);display:flex;flex-direction:column;justify-content:center;gap:var(--space-6);}
+.result-metric{display:flex;flex-direction:column;gap:var(--space-1);}
+.result-metric .metric-val{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-primary);line-height:1;letter-spacing:-0.02em;}
+.result-metric .metric-val.warm{color:var(--color-accent-warm);}
+.result-metric .metric-label{font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em;}
+.result-quote{border-top:1px solid var(--color-divider);padding-top:var(--space-6);}
+.result-quote p{font-size:var(--text-xs);color:var(--color-text-muted);font-style:italic;line-height:1.6;}
+@media(max-width:768px){.case-card-inner{grid-template-columns:1fr;}.case-result{border-left:none;border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.case-result{grid-template-columns:1fr;}}
+
+/* ─── SKILLS ─── */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);}
+.skill-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);box-shadow:var(--shadow-sm);}
+.skill-icon{width:44px;height:44px;border-radius:var(--radius-lg);background:var(--color-primary-highlight);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4);}
+.skill-icon svg{width:22px;height:22px;stroke:var(--color-primary);fill:none;stroke-width:1.75;}
+.skill-card h3{font-size:var(--text-base);font-weight:700;color:var(--color-text);margin-bottom:var(--space-3);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+.skill-tag{font-size:var(--text-xs);padding:2px var(--space-2);border-radius:var(--radius-sm);background:var(--color-surface-offset);color:var(--color-text-muted);border:1px solid var(--color-border);}
+@media(max-width:768px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.skills-grid{grid-template-columns:1fr;}}
+
+/* ─── CONTACT ─── */
+.contact-band{background:var(--color-primary);padding:clamp(var(--space-16),8vw,var(--space-20)) var(--space-6);}
+.contact-inner{max-width:var(--content-narrow);margin-inline:auto;text-align:center;}
+.contact-inner h2{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;margin-bottom:var(--space-4);letter-spacing:-0.02em;}
+.contact-inner p{font-size:var(--text-base);color:oklch(from #fff l c h/0.75);margin-bottom:var(--space-8);margin-inline:auto;}
+.contact-actions{display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--color-primary);font-weight:700;}
+.btn-white:hover{background:oklch(from #fff l c h/0.9);}
+.btn-outline-white{border:1.5px solid oklch(from #fff l c h/0.4);color:#fff;}
+.btn-outline-white:hover{background:oklch(from #fff l c h/0.1);}
+
+/* ─── FOOTER ─── */
+footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-divider);}
+.footer-inner{max-width:var(--content-wide);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);}
+.footer-inner p{font-size:var(--text-xs);color:var(--color-text-faint);}
+.footer-links{display:flex;gap:var(--space-4);}
+.footer-links a{font-size:var(--text-xs);color:var(--color-text-muted);text-decoration:none;}
+.footer-links a:hover{color:var(--color-primary);}
+
+/* ─── DIVIDER ─── */
+.divider-line{height:1px;background:var(--color-divider);margin:0;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Parikshita Parmar</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Available for opportunities
+      </div>
+      <h1>Digital<br>Marketing<br><em>Analyst</em></h1>
+      <p class="hero-desc">I turn e-commerce and marketing data into clear decisions, from traffic analysis and email optimisation to campaign reporting and store performance.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">View Case Studies</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card highlight">
+        <div class="stat-num">+12%</div>
+        <div class="stat-label">Store Conversion Improvement</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">+15%</div>
+        <div class="stat-label">Average Email Open Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">35%</div>
+        <div class="stat-label">Organic Growth Traffic (6 mts)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years in DTC Marketing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container-wide">
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Data-curious marketer, DTC-focused</h2>
+        <div class="tools-list">
+          <span class="tool-chip">Google Analytics 4</span>
+          <span class="tool-chip">Woocommerce</span>
+          <span class="tool-chip">Mailchimp</span>
+          <span class="tool-chip">Meta Ads</span>
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">Google Search Console</span>
+          <span class="tool-chip">Mailchimp</span>
+          <span class="tool-chip">Google Tag Manager</span>
+          <span class="tool-chip">Microsoft Clarity</span>
+          <span class="tool-chip">Excel</span>
+          <span class="tool-chip">Canva</span>
+          <span class="tool-chip">SQL</span>
+          <span class="tool-chip">Python</span>
+        </div>
+      </div>
+      <div class="about-bio">
+        <p>I'm a <strong>digital marketing analyst</strong> with hands-on experience in a strartup DTC e-commerce brand, tracking every click, campaign, and conversion to find what actually drives growth. At Arts Fiesta, I managed the full marketing analytics stack: GA4 reporting, email campaigns, Website performance, and paid social tracking.</p>
+        <p>I don't just pull reports, I use data to ask better questions. <strong>Why is traffic up but revenue flat? Which product pages leak customers before checkout? What subject line gets people to open?</strong> Then I act on those answers and measure the result.</p>
+        <p>Currently based in <strong>Toronto, ON</strong> and looking for a Marketing analyst or Growth Marketing role where data and creativity work together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- CASE STUDIES -->
+<section class="section section-alt" id="work">
+  <div class="container-wide">
+    <p class="section-label">Case Studies</p>
+    <h2 class="section-title">Real work, real results</h2>
+    <p class="section-desc">Three examples from Arts Fiesta, each starting with a business problem, answered with data, and measured with outcomes.</p>
+
+    <div class="cases-grid">
+
+      <!-- CASE 1 -->
+      <article class="case-card">
+        <div class="case-card-inner">
+          <div class="case-content">
+            <div class="case-meta">
+              <span class="case-num">01</span>
+              <span class="case-tag">Conversion Optimisation</span>
+            </div>
+            <h3>Fixing a leaky checkout funnel</h3>
+            <p>Traffic to the webiste was growing month-on-month, but revenue wasn't keeping pace. Conversion rate had plateaued at under 1.5% ; something was breaking between browsing and buying.</p>
+            <ul class="case-steps">
+              <li data-step="1">Used GA4 funnel exploration to find the exact step where 60% of sessions dropped off — the checkout page</li>
+              <li data-step="2">Segmented users by device type, location, and traffic source to see if certain groups were more likely to abandon carts. Cross-referenced with heatmap data to identify identify friction points for mobile users, such as long form fields and unclear calls-to-action.</li>
+              <li data-step="3">Simplified the checkout form, improved page layout, and optimized button placements</li>
+              <li data-step="4">Monitored weekly for 8 weeks and tracked conversion by traffic source</li>
+            </ul>
+          </div>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="metric-val">+2.1%</span>
+              <span class="metric-label">Conversion Rate Lift</span>
+            </div>
+            <div class="result-metric">
+              <span class="metric-val warm">↓20%</span>
+              <span class="metric-label">Checkout Abandonment</span>
+            </div>
+            <div class="result-quote">
+              <p>"Identified the friction point using GA4 funnel analysis, updated the UX copy, and measured the outcome over an 8-week window."</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 2 -->
+      <article class="case-card">
+        <div class="case-card-inner">
+          <div class="case-content">
+            <div class="case-meta">
+              <span class="case-num">02</span>
+              <span class="case-tag">Email Marketing</span>
+            </div>
+            <h3>Subject line testing that lifted open rates</h3>
+            <p>The Arts Fiesta email list was growing but open rates were sitting at industry average (~15%). The goal was to understand what drove subscribers to open and use that to improve every future send.</p>
+            <ul class="case-steps">
+              <li data-step="1">Audited 6 months of Mailchimp campaign data, open rate, CTR, and revenue per send by segment</li>
+              <li data-step="2">Identified that personalised and curiosity-driven subject lines consistently outperformed announcement-style ones</li>
+              <li data-step="3">Ran A/B subject line tests over 4 campaigns with a consistent send-time and audience split</li>
+              <li data-step="4">Documented winning patterns and built a subject line formula for future campaigns</li>
+            </ul>
+          </div>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="metric-val">30%</span>
+              <span class="metric-label">Average Open Rate (up from 15%)</span>
+            </div>
+            <div class="result-metric">
+              <span class="metric-val warm">+3.2%</span>
+              <span class="metric-label">Click-Through Rate</span>
+            </div>
+            <div class="result-quote">
+              <p>"Built a repeatable A/B testing process in Mailchimp that now informs every new campaign subject line."</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 3 -->
+      <article class="case-card">
+        <div class="case-card-inner">
+          <div class="case-content">
+            <div class="case-meta">
+              <span class="case-num">03</span>
+              <span class="case-tag">Channel & Traffic Analysis</span>
+            </div>
+            <h3>Finding the highest-value traffic source</h3>
+            <p>Arts Fiesta was active across Pinterest, Instagram, and organic search. Budget and creative effort needed to go to the channels that converted, not just the ones that drove clicks.</p>
+            <ul class="case-steps">
+              <li data-step="1">Built a GA4 channel attribution report comparing sessions, conversion rate, and revenue per channel</li>
+              <li data-step="2">Discovered Pinterest drove 40% of sessions but had 3× higher conversion rate than Instagram traffic</li>
+              <li data-step="3">Shifted content production toward Pinterest optimised pin descriptions, added seasonal boards, and improved product keywords</li>
+              <li data-step="4">Monitored channel revenue share monthly; reduced Instagram posting frequency without impacting revenue</li>
+            </ul>
+          </div>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="metric-val">3×</span>
+              <span class="metric-label">Pinterest vs. Instagram CVR</span>
+            </div>
+            <div class="result-metric">
+              <span class="metric-val warm">50k</span>
+              <span class="metric-label"> impressions at 2.1% CTR</span>
+            </div>
+            <div class="result-quote">
+              <p>"Redirected content effort based on channel-level conversion data — not follower counts or gut feel."</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container-wide">
+    <p class="section-label">Skills & Tools</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-desc">A practical toolkit built through real DTC work — not just courses.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" stroke-linecap="round"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Analytics & Reporting</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Analytics 4</span>
+          <span class="skill-tag">Google Seach Console</span>
+          <span class="skill-tag">Google Tag Manager</span>
+          <span class="skill-tag">Funnel Analysis</span>
+          <span class="skill-tag">Weekly Reporting</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M12 12v4M10 14h4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>E-Commerce & DTC</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Woocommerce</span>
+          <span class="skill-tag">Amazon Seller Central</span>
+          <span class="skill-tag">Conversion Rate Optimisation</span>
+          <span class="skill-tag">Product Listing Optimisation</span>
+          <span class="skill-tag">A/B Testing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Email & Retention</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Mailchimp</span>
+          <span class="skill-tag">Kit</span>
+          <span class="skill-tag">Campaign Reporting</span>
+          <span class="skill-tag">Segmentation</span>
+          <span class="skill-tag">Automated Flows</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 7v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke-linecap="round"/></svg>
+        </div>
+        <h3>SEO & Social</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Meta Ads</span>
+          <span class="skill-tag">SEO</span>
+          <span class="skill-tag">Wordpress CMS</span>
+          <span class="skill-tag">SEMrush</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Data & Visualisation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Dashboard Building</span>
+          <span class="skill-tag">Excel / Google Sheets</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Content & Creative</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">Social Copywriting</span>
+          <span class="skill-tag">Email Copywriting</span>
+          <span class="skill-tag">Product Description Writing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-band" id="contact">
+  <div class="contact-inner">
+    <h2>Let's work together</h2>
+    <p>I'm currently open to full-time marketing analyst and DTC marketing roles in Toronto. If you're building something data-driven and need someone who cares about both the numbers and the story they tell, let's talk.</p>
+    <div class="contact-actions">
+      <a href="mailto:[parikshitaparmar@gmail.com]" class="btn btn-white">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Parikshita Parmar · Toronto, ON</p>
+    <div class="footer-links">
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  const moon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  const sun='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  if(t){
+    t.innerHTML=d==='dark'?sun:moon;
+    t.addEventListener('click',()=>{
+      d=d==='dark'?'light':'dark';
+      r.setAttribute('data-theme',d);
+      t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
+      t.innerHTML=d==='dark'?sun:moon;
+    });
+  }
+
+  // Scroll reveal
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.case-card,.skill-card,.stat-card').forEach(el=>{
+    el.style.opacity='0';
+    el.style.transform='translateY(16px)';
+    el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
