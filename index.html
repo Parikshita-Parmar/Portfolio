@@ -151,6 +151,33 @@ nav{position:sticky;top:0;z-index:100;background:oklch(from var(--color-bg) l c 
 @media(max-width:768px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.skills-grid{grid-template-columns:1fr;}}
 
+/* ─── INDEPENDENT PROJECTS ─── */
+.projects-grid{display:grid;gap:var(--space-6);}
+.project-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive);}
+.project-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);}
+.project-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.project-content{padding:var(--space-10);}
+.project-meta{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-6);flex-wrap:wrap;}
+.project-num{font-size:var(--text-xs);font-weight:700;color:var(--color-text-faint);letter-spacing:0.08em;}
+.project-tool-tag{font-size:var(--text-xs);font-weight:600;background:var(--color-surface-offset);color:var(--color-text-muted);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);border:1px solid var(--color-border);}
+.project-content h3{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);margin-bottom:var(--space-4);letter-spacing:-0.02em;line-height:1.1;}
+.project-content p{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-6);line-height:1.7;}
+.project-steps{list-style:none;display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-6);}
+.project-steps li{display:flex;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted);}
+.project-steps li::before{content:attr(data-step);min-width:24px;height:24px;border-radius:var(--radius-full);background:var(--color-surface-offset);color:var(--color-text-muted);font-size:var(--text-xs);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;border:1px solid var(--color-border);}
+.project-link{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;color:var(--color-primary);text-decoration:none;}
+.project-link:hover{color:var(--color-primary-hover);}
+.project-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;}
+.project-stats{background:var(--color-surface-offset);border-left:1px solid var(--color-divider);padding:var(--space-10);display:flex;flex-direction:column;justify-content:center;gap:var(--space-6);}
+.project-stat{display:flex;flex-direction:column;gap:var(--space-1);}
+.project-stat .stat-val{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-primary);line-height:1;letter-spacing:-0.02em;}
+.project-stat .stat-val.warm{color:var(--color-accent-warm);}
+.project-stat .stat-desc{font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em;}
+.project-dataset{border-top:1px solid var(--color-divider);padding-top:var(--space-6);}
+.project-dataset p{font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.6;}
+@media(max-width:768px){.project-card-inner{grid-template-columns:1fr;}.project-stats{border-left:none;border-top:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.project-stats{grid-template-columns:1fr;}}
+
 /* ─── CONTACT ─── */
 .contact-band{background:var(--color-primary);padding:clamp(var(--space-16),8vw,var(--space-20)) var(--space-6);}
 .contact-inner{max-width:var(--content-narrow);margin-inline:auto;text-align:center;}
@@ -184,6 +211,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
@@ -244,7 +272,6 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
           <span class="tool-chip">Meta Ads</span>
           <span class="tool-chip">Power BI</span>
           <span class="tool-chip">Google Search Console</span>
-          <span class="tool-chip">Mailchimp</span>
           <span class="tool-chip">Google Tag Manager</span>
           <span class="tool-chip">Microsoft Clarity</span>
           <span class="tool-chip">Excel</span>
@@ -254,9 +281,9 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         </div>
       </div>
       <div class="about-bio">
-        <p>I'm a <strong>digital marketing analyst</strong> with hands-on experience in a strartup DTC e-commerce brand, tracking every click, campaign, and conversion to find what actually drives growth. At Arts Fiesta, I managed the full marketing analytics stack: GA4 reporting, email campaigns, Website performance, and paid social tracking.</p>
+        <p>I'm a <strong>digital marketing analyst</strong> with hands-on experience in a startup DTC e-commerce brand, tracking every click, campaign, and conversion to find what actually drives growth. At Arts Fiesta, I managed the full marketing analytics stack: GA4 reporting, email campaigns, website performance, and paid social tracking.</p>
         <p>I don't just pull reports, I use data to ask better questions. <strong>Why is traffic up but revenue flat? Which product pages leak customers before checkout? What subject line gets people to open?</strong> Then I act on those answers and measure the result.</p>
-        <p>Currently based in <strong>Toronto, ON</strong> and looking for a Marketing analyst or Growth Marketing role where data and creativity work together.</p>
+        <p>Currently based in <strong>Toronto, ON</strong> and looking for a Marketing Analyst or Growth Marketing role where data and creativity work together.</p>
       </div>
     </div>
   </div>
@@ -282,10 +309,10 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
               <span class="case-tag">Conversion Optimisation</span>
             </div>
             <h3>Fixing a leaky checkout funnel</h3>
-            <p>Traffic to the webiste was growing month-on-month, but revenue wasn't keeping pace. Conversion rate had plateaued at under 1.5% ; something was breaking between browsing and buying.</p>
+            <p>Traffic to the website was growing month-on-month, but revenue wasn't keeping pace. Conversion rate had plateaued at under 1.5% — something was breaking between browsing and buying.</p>
             <ul class="case-steps">
               <li data-step="1">Used GA4 funnel exploration to find the exact step where 60% of sessions dropped off — the checkout page</li>
-              <li data-step="2">Segmented users by device type, location, and traffic source to see if certain groups were more likely to abandon carts. Cross-referenced with heatmap data to identify identify friction points for mobile users, such as long form fields and unclear calls-to-action.</li>
+              <li data-step="2">Segmented users by device type, location, and traffic source to see if certain groups were more likely to abandon carts. Cross-referenced with heatmap data to identify friction points for mobile users, such as long form fields and unclear calls-to-action.</li>
               <li data-step="3">Simplified the checkout form, improved page layout, and optimized button placements</li>
               <li data-step="4">Monitored weekly for 8 weeks and tracked conversion by traffic source</li>
             </ul>
@@ -296,7 +323,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
               <span class="metric-label">Conversion Rate Lift</span>
             </div>
             <div class="result-metric">
-              <span class="metric-val warm">↓20%</span>
+              <span class="metric-val warm">&#x2193;20%</span>
               <span class="metric-label">Checkout Abandonment</span>
             </div>
             <div class="result-quote">
@@ -317,7 +344,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
             <h3>Subject line testing that lifted open rates</h3>
             <p>The Arts Fiesta email list was growing but open rates were sitting at industry average (~15%). The goal was to understand what drove subscribers to open and use that to improve every future send.</p>
             <ul class="case-steps">
-              <li data-step="1">Audited 6 months of Mailchimp campaign data, open rate, CTR, and revenue per send by segment</li>
+              <li data-step="1">Audited 6 months of Mailchimp campaign data — open rate, CTR, and revenue per send by segment</li>
               <li data-step="2">Identified that personalised and curiosity-driven subject lines consistently outperformed announcement-style ones</li>
               <li data-step="3">Ran A/B subject line tests over 4 campaigns with a consistent send-time and audience split</li>
               <li data-step="4">Documented winning patterns and built a subject line formula for future campaigns</li>
@@ -345,25 +372,25 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
           <div class="case-content">
             <div class="case-meta">
               <span class="case-num">03</span>
-              <span class="case-tag">Channel & Traffic Analysis</span>
+              <span class="case-tag">Channel &amp; Traffic Analysis</span>
             </div>
             <h3>Finding the highest-value traffic source</h3>
             <p>Arts Fiesta was active across Pinterest, Instagram, and organic search. Budget and creative effort needed to go to the channels that converted, not just the ones that drove clicks.</p>
             <ul class="case-steps">
               <li data-step="1">Built a GA4 channel attribution report comparing sessions, conversion rate, and revenue per channel</li>
-              <li data-step="2">Discovered Pinterest drove 40% of sessions but had 3× higher conversion rate than Instagram traffic</li>
-              <li data-step="3">Shifted content production toward Pinterest optimised pin descriptions, added seasonal boards, and improved product keywords</li>
+              <li data-step="2">Discovered Pinterest drove 40% of sessions but had 3&#xD7; higher conversion rate than Instagram traffic</li>
+              <li data-step="3">Shifted content production toward Pinterest — optimised pin descriptions, added seasonal boards, and improved product keywords</li>
               <li data-step="4">Monitored channel revenue share monthly; reduced Instagram posting frequency without impacting revenue</li>
             </ul>
           </div>
           <div class="case-result">
             <div class="result-metric">
-              <span class="metric-val">3×</span>
+              <span class="metric-val">3&#xD7;</span>
               <span class="metric-label">Pinterest vs. Instagram CVR</span>
             </div>
             <div class="result-metric">
               <span class="metric-val warm">50k</span>
-              <span class="metric-label"> impressions at 2.1% CTR</span>
+              <span class="metric-label">Impressions at 2.1% CTR</span>
             </div>
             <div class="result-quote">
               <p>"Redirected content effort based on channel-level conversion data — not follower counts or gut feel."</p>
@@ -376,111 +403,10 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
   </div>
 </section>
 
-<div class="divider-line"></div>
-
-<!-- DATA PROJECTS -->
-<section class="section" id="projects">
-  <div class="container-wide">
-    <p class="section-label">Independent Projects</p>
-    <h2 class="section-title">Data analysis using real datasets</h2>
-    <p class="section-desc">Two end-to-end analytical projects built using public Kaggle datasets — applying SQL, Python, and Power BI to answer real business questions.</p>
-
-    <div class="projects-grid">
-
-      <!-- PROJECT 1 -->
-      <article class="project-card">
-        <div class="project-header">
-          <div class="project-tools">
-            <span class="tool-badge sql">SQL</span>
-            <span class="tool-badge powerbi">Power BI</span>
-            <span class="tool-badge kaggle">Kaggle Dataset</span>
-          </div>
-          <a href="https://github.com/ParikshitaJain/PortfolioProjects/tree/22b0a0fb6c8057288065c46980aad7a3db55f0e4/2.%20Campaign%20Performance%20Analysis" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View project on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">Campaign Performance Analysis</h3>
-        <p class="project-desc">Analysed 12 months of multi-channel marketing campaign data to identify engagement trends, platform efficiency, and cost optimisation opportunities across DV360, Facebook Ads, and Google Ads.</p>
-        <div class="project-stats">
-          <div class="pstat">
-            <span class="pstat-val">$858K</span>
-            <span class="pstat-label">Annual Spend Analysed</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">3 Platforms</span>
-            <span class="pstat-label">DV360, Meta, Google</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">31.2%</span>
-            <span class="pstat-label">Top Campaign CTR</span>
-          </div>
-        </div>
-        <div class="project-findings">
-          <p class="findings-title">Key findings</p>
-          <ul class="findings-list">
-            <li>DV360 delivered the highest reach (34M impressions) at the same CPC ($0.22) as Facebook Ads — strongest overall efficiency</li>
-            <li>Display campaigns achieved the highest CTR (3.95%); mobile drove the most clicks overall</li>
-            <li>Campaign 2980 achieved 31.2% CTR at $0.03 CPC vs. Campaign 3719's $6.24 CPC at 0.64% CTR — clear budget reallocation opportunity</li>
-            <li>Seasonal peaks in August and October drove the majority of annual impressions</li>
-          </ul>
-        </div>
-        <div class="project-method">
-          <span class="method-label">Methodology: </span>SQL grouping by campaign + budget tier → Power BI dashboard with DAX-calculated CPC, CTR, CPM → calendar table for trend analysis
-        </div>
-      </article>
-
-      <!-- PROJECT 2 -->
-      <article class="project-card">
-        <div class="project-header">
-          <div class="project-tools">
-            <span class="tool-badge python">Python</span>
-            <span class="tool-badge powerbi">Power BI</span>
-            <span class="tool-badge kaggle">Kaggle Dataset</span>
-          </div>
-          <a href="https://github.com/ParikshitaJain/PortfolioProjects/tree/main/E-Commerce%20Data%20Analysis" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View project on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-        <h3 class="project-title">E-Commerce Sales & Customer Analysis</h3>
-        <p class="project-desc">Full-cycle analysis of a UK-based retailer's 2023 transaction data — from Python data cleaning (Pandas, Matplotlib) to Power BI dashboards — uncovering sales trends, RFM customer segments, and product performance.</p>
-        <div class="project-stats">
-          <div class="pstat">
-            <span class="pstat-val">£9.56M</span>
-            <span class="pstat-label">Revenue Analysed</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">98.36%</span>
-            <span class="pstat-label">Repeat Customer Rate</span>
-          </div>
-          <div class="pstat">
-            <span class="pstat-val">20K+</span>
-            <span class="pstat-label">Orders Processed</span>
-          </div>
-        </div>
-        <div class="project-findings">
-          <p class="findings-title">Key findings</p>
-          <ul class="findings-list">
-            <li>Oct–Nov spike (+43% vs. monthly avg) driven by Black Friday/holiday demand; December drop signals need for post-holiday retention campaigns</li>
-            <li>RFM segmentation identified 2,677 recent customers with low conversion to "best customer" — loyalty programme opportunity</li>
-            <li>4.29% cancellation rate traced to poor product listings — A/B testing descriptions recommended</li>
-            <li>Germany, Netherlands, and France represent untapped international growth alongside UK dominance</li>
-          </ul>
-        </div>
-        <div class="project-method">
-          <span class="method-label">Methodology: </span>Python (Pandas) for cleaning, deduplication, outlier handling → RFM scoring → Power BI for trend, geographic, and segment visualisation
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider-line"></div>
-
 <!-- SKILLS -->
 <section class="section" id="skills">
   <div class="container-wide">
-    <p class="section-label">Skills & Tools</p>
+    <p class="section-label">Skills &amp; Tools</p>
     <h2 class="section-title">What I work with</h2>
     <p class="section-desc">A practical toolkit built through real DTC work — not just courses.</p>
     <div class="skills-grid">
@@ -488,10 +414,10 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" stroke-linecap="round"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg>
         </div>
-        <h3>Analytics & Reporting</h3>
+        <h3>Analytics &amp; Reporting</h3>
         <div class="skill-tags">
           <span class="skill-tag">Google Analytics 4</span>
-          <span class="skill-tag">Google Seach Console</span>
+          <span class="skill-tag">Google Search Console</span>
           <span class="skill-tag">Google Tag Manager</span>
           <span class="skill-tag">Funnel Analysis</span>
           <span class="skill-tag">Weekly Reporting</span>
@@ -501,9 +427,9 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M12 12v4M10 14h4" stroke-linecap="round"/></svg>
         </div>
-        <h3>E-Commerce & DTC</h3>
+        <h3>E-Commerce &amp; DTC</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Woocommerce</span>
+          <span class="skill-tag">WooCommerce</span>
           <span class="skill-tag">Amazon Seller Central</span>
           <span class="skill-tag">Conversion Rate Optimisation</span>
           <span class="skill-tag">Product Listing Optimisation</span>
@@ -514,7 +440,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke-linecap="round"/></svg>
         </div>
-        <h3>Email & Retention</h3>
+        <h3>Email &amp; Retention</h3>
         <div class="skill-tags">
           <span class="skill-tag">Mailchimp</span>
           <span class="skill-tag">Kit</span>
@@ -527,11 +453,11 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 7v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke-linecap="round"/></svg>
         </div>
-        <h3>SEO & Social</h3>
+        <h3>SEO &amp; Social</h3>
         <div class="skill-tags">
           <span class="skill-tag">Meta Ads</span>
           <span class="skill-tag">SEO</span>
-          <span class="skill-tag">Wordpress CMS</span>
+          <span class="skill-tag">WordPress CMS</span>
           <span class="skill-tag">SEMrush</span>
         </div>
       </div>
@@ -539,7 +465,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Data & Visualisation</h3>
+        <h3>Data &amp; Visualisation</h3>
         <div class="skill-tags">
           <span class="skill-tag">SQL</span>
           <span class="skill-tag">Python</span>
@@ -552,7 +478,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
         <div class="skill-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke-linecap="round"/></svg>
         </div>
-        <h3>Content & Creative</h3>
+        <h3>Content &amp; Creative</h3>
         <div class="skill-tags">
           <span class="skill-tag">Canva</span>
           <span class="skill-tag">Social Copywriting</span>
@@ -564,13 +490,113 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
   </div>
 </section>
 
+<div class="divider-line"></div>
+
+<!-- INDEPENDENT PROJECTS -->
+<section class="section section-alt" id="projects">
+  <div class="container-wide">
+    <p class="section-label">Independent Projects</p>
+    <h2 class="section-title">Data projects, built from scratch</h2>
+    <p class="section-desc">Self-directed analyses using public Kaggle datasets : end-to-end, from raw data to dashboard.</p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <span class="project-tool-tag">SQL</span>
+              <span class="project-tool-tag">Power BI</span>
+            </div>
+            <h3>Campaign Performance Analysis</h3>
+            <p>Analysed a full year of marketing campaign data across platforms (DV360, Facebook Ads, Google Ads) to identify engagement trends, cost efficiency, and budget utilisation — then visualised findings in an interactive Power BI dashboard.</p>
+            <ul class="project-steps">
+              <li data-step="1">Cleaned and standardised Kaggle dataset in Excel; resolved daily row-level entries with mid-campaign budget changes</li>
+              <li data-step="2">Used SQL to group records by campaign, channel, and budget tier aggregating media cost within each grouping</li>
+              <li data-step="3">Built calculated metrics (CTR, CPC, CPM) and a calendar table in Power BI for time-based filtering and trend analysis</li>
+              <li data-step="4">Compared platform and channel performance; identified best and worst-performing campaigns by cost efficiency</li>
+            </ul>
+            <a href="https://github.com/ParikshitaJain/PortfolioProjects" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="project-stats">
+            <div class="project-stat">
+              <span class="stat-val">31.2%</span>
+              <span class="stat-desc">Best Campaign CTR</span>
+            </div>
+            <div class="project-stat">
+              <span class="stat-val warm">$0.03</span>
+              <span class="stat-desc">Lowest CPC Achieved</span>
+            </div>
+            <div class="project-stat">
+              <span class="stat-val">$858K</span>
+              <span class="stat-desc">Total Annual Spend Analysed</span>
+            </div>
+            <div class="project-dataset">
+              <p>Dataset: Kaggle — Marketing Campaign Performance &middot; 12 months &middot; 3 platforms</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project-card">
+        <div class="project-card-inner">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <span class="project-tool-tag">Python</span>
+              <span class="project-tool-tag">Pandas</span>
+              <span class="project-tool-tag">Power BI</span>
+            </div>
+            <h3>E-Commerce Data Analysis</h3>
+            <p>End-to-end analysis of a UK retailer's 2023 transaction data : cleaning raw data in Python, segmenting customers with RFM analysis, and building an interactive Power BI dashboard to surface sales trends and product insights.</p>
+            <ul class="project-steps">
+              <li data-step="1">Cleaned transaction data in Python (Pandas), handled missing values, outliers, duplicates, and data type inconsistencies</li>
+              <li data-step="2">Performed RFM analysis to segment 376,970 customers into Recent, Regular, Lost, and Best groups</li>
+              <li data-step="3">Analysed monthly sales trends, top products by revenue, order cancellation patterns, and country-level performance</li>
+              <li data-step="4">Built Power BI dashboard with trend visuals, customer segmentation breakdown, and geographic revenue map</li>
+            </ul>
+            <a href="https://github.com/ParikshitaJain/PortfolioProjects/tree/main/E-Commerce%20Data%20Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
+              View on GitHub
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="project-stats">
+            <div class="project-stat">
+              <span class="stat-val">&#xA3;9.56M</span>
+              <span class="stat-desc">Annual Revenue Analysed</span>
+            </div>
+            <div class="project-stat">
+              <span class="stat-val warm">98.36%</span>
+              <span class="stat-desc">Repeat Customer Rate</span>
+            </div>
+            <div class="project-stat">
+              <span class="stat-val">20K+</span>
+              <span class="stat-desc">Orders Processed</span>
+            </div>
+            <div class="project-dataset">
+              <p>Dataset: Kaggle — UK E-Commerce 2023 &middot; 376,970 customers &middot; Python + Power BI</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-band" id="contact">
   <div class="contact-inner">
     <h2>Let's work together</h2>
-    <p>I'm currently open to full-time marketing analyst and DTC marketing roles in Toronto. If you're building something data-driven and need someone who cares about both the numbers and the story they tell, let's talk.</p>
+    <p>I'm currently open to full-time marketing analyst and data analyst roles in Toronto. If you're building something data-driven and need someone who cares about both the numbers and the story they tell, let's talk.</p>
     <div class="contact-actions">
-      <a href="mailto:[parikshitaparmar@gmail.com]" class="btn btn-white">Email Me</a>
+      <a href="mailto:parikshitaparmar@gmail.com" class="btn btn-white">Email Me</a>
     </div>
   </div>
 </section>
@@ -578,7 +604,7 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <p>© 2026 Parikshita Parmar · Toronto, ON</p>
+    <p>&copy; 2026 Parikshita Parmar &middot; Toronto, ON</p>
     <div class="footer-links">
     </div>
   </div>
@@ -601,13 +627,12 @@ footer{padding:var(--space-8) var(--space-6);border-top:1px solid var(--color-di
     });
   }
 
-  // Scroll reveal
   const observer=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
     });
   },{threshold:0.1});
-  document.querySelectorAll('.case-card,.skill-card,.stat-card').forEach(el=>{
+  document.querySelectorAll('.case-card,.skill-card,.stat-card,.project-card').forEach(el=>{
     el.style.opacity='0';
     el.style.transform='translateY(16px)';
     el.style.transition='opacity 0.5s ease, transform 0.5s ease';
